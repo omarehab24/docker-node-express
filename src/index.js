@@ -15,7 +15,7 @@ const { Client } = require('pg')
 const DB_NAME = 'root'
 const DB_PASSWORD = 'example'
 const DB_PORT = '5432'
-const DB_HOST = "sql-db" // Docker automatically maps the service/container name to the container's IP address
+const DB_HOST = "postgres" // Docker automatically maps the service/container name to the container's IP address
 
 const URI = `postgresql://${DB_NAME}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}`
 const client = new Client({
