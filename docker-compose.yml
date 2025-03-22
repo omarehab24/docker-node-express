@@ -2,10 +2,9 @@
 services:
   node-app:
     container_name: docker-node-express-container
-    image: 22omar/docker-node-express
+    image: 22omar/docker-node-express-2
     # build: .
     # build: ./Dockerfile.dev # this will build the image from the Dockerfile.dev
-    # image: docker-node-express
     ports:
       - "4000:4000"
     env_file:
