@@ -1,0 +1,14 @@
+services:
+  node-app:
+    build:
+      context: .
+      # this is used in Dockerfile that contains ARG keyword
+      # args:
+      #   - NODE_ENV=production 
+
+      # this is used in Dockerfile that contains Stage
+      target: production
+    # image: docker-node-express
+    environment:
+      - NODE_ENV=production
+    command: "npm start"

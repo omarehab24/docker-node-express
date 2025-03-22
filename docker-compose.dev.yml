@@ -1,0 +1,16 @@
+services:
+  node-app:
+    build:
+      context: .
+      # this is used in Dockerfile that contains ARG keyword
+      # args:
+      #   - NODE_ENV=development
+
+      # this is used in Dockerfile that contains Stage
+      target: development
+    # image: docker-node-express
+    volumes:
+      - ./src:/app/src:ro
+    environment:
+      - NODE_ENV=development
+    command: "npm run start-dev"
