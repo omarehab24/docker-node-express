@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const PORT = process.env.PORT || 4000;
+const os = require("os");
 
 // const mongoose = require("mongoose");
 // const DB_NAME = 'root'
@@ -27,6 +28,7 @@ client.connect().then(() => console.log("connected to Postgres DB")).catch((err)
 
 
 app.get("/", (req, res) => {
+    console.log(`traffic received from ${os.hostname}`);
     res.send("<h1>Hello World!!!!</h1>");
 });
 
