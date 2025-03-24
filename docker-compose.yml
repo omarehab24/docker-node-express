@@ -9,6 +9,15 @@ services:
     #   - "4000:4000"
     env_file:
       - ./.env
+    deploy:
+      mode: replicated
+      replicas: 4
+      update_config:
+        parallelism: 2
+        delay: 10s
+      restart_policy:
+        condition: on-failure
+        delay: 5s
     depends_on:
       - postgres
 
@@ -37,7 +46,6 @@ services:
     environment:
       POSTGRES_USER: root
       POSTGRES_PASSWORD: example
-  
   # mongo:
   #   image: mongo
   #   restart: always
