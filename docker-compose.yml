@@ -11,9 +11,9 @@ services:
       - ./.env
     deploy:
       mode: replicated
-      replicas: 4
+      replicas: 2
       update_config:
-        parallelism: 2
+        parallelism: 1
         delay: 10s
       restart_policy:
         condition: on-failure
@@ -46,6 +46,10 @@ services:
     environment:
       POSTGRES_USER: root
       POSTGRES_PASSWORD: example
+  
+  redis:
+    image: redis
+
   # mongo:
   #   image: mongo
   #   restart: always
